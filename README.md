@@ -1,3 +1,2 @@
-**Welcome to ZURIBANK ATM**
-
-**An ATM Mockup Task from Zuri**
+   **MY ZURI TRAINING REPOSITORY**
+   **Specific for ZURI tasks only** 
