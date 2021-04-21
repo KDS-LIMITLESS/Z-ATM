@@ -14,8 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+from Zblog import views as Zviews
 
 urlpatterns = [
+    path('register/', include('Zblog.urls')),
+    path('login/', Zviews.login_user, name='login'),
     path('admin/', admin.site.urls),
 ]
