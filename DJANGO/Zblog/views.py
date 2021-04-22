@@ -13,6 +13,8 @@ def register_user(request) -> RegisterForm:
             name = form.cleaned_data.get('firstName')
             messages.success(request, f'Account created for {name}!')
             return redirect('/login/')
+        error = form.errors
+        return render(request, 'register.html', {"form": form})
     form = RegisterForm()
     return render(request, 'register.html', {"form": form})
 

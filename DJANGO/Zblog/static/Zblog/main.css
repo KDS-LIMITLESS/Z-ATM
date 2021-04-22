@@ -6,6 +6,14 @@ body {
     font-family: fantasy;
   }
 
+.cs{
+  padding-top: -5rem;
+  padding-left: 30%;
+  padding-right: -80%;
+  margin-top: 40px;
+  align-items:initial;
+}
+
 
 .form1 {
   margin-left: 28%;
@@ -32,4 +40,16 @@ body {
   background-color: white;
   border: 0, 0, 0, 0;
   border-style: none;
+}
+
+.invalid-feedback {
+  display: inline-flexss;
+}
+
+.asteriskField{
+  color: red;
+}
+
+li{
+  display: none;
 }

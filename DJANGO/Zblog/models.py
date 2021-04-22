@@ -2,7 +2,7 @@ from django.db import models
 
 
 class RegisterUser(models.Model):
-    firstName = models.CharField(max_length=15, null=False)
+    firstName = models.CharField(max_length=15, null=False, unique=False)
     lastName = models.CharField(max_length=15, null=False)
     otherNames = models.CharField(max_length=15, null=True)
     email = models.EmailField(null=False, unique=True)
