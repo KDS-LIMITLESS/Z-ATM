@@ -1,26 +1,18 @@
 from django.db import models
-
-
-class RegisterUser(models.Model):
-    firstName = models.CharField(max_length=15, null=False, unique=False)
-    lastName = models.CharField(max_length=15, null=False)
-    otherNames = models.CharField(max_length=15, null=True)
-    email = models.EmailField(null=False, unique=True)
-    password = models.CharField(null=False, max_length=16)
-    
-
-    def save(self, *args,**kwargs):
-        super().save() 
-
-class LoginUser(models.Model):
-    email = models.EmailField(null=False)
-    password = models.CharField(max_length=16, null=False)
-
-
-class PasswordReset(models.Model):
-    email = models.EmailField(null=False)
+from django.contrib.auth.models import User
 
 
 class Comment(models.Model):
-    comments = models.TextField(max_length=200)
+    post = models.ForeignKey(User, on_delete=models.CASCADE)
+    username = models.CharField(max_length=15)
+    email = models.EmailField(max_length=254)
+    body = models.TextField(null=False)
+    date = models.DateTimeField(auto_now_add=True)
+    active= models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['date']
+
+    def __str__(self):
+        return f'Comment by {self.username}'
 

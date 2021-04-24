@@ -1,10 +1,5 @@
 from django.contrib import admin
-from . import models
+from .models import Comment
 
-admin.site.register(models.Comment)
-admin.site.register(models.RegisterUser)
-admin.site.register(models.PasswordReset)
-admin.site.register(models.LoginUser)
-
-
+admin.site.register(Comment)
 # Register your models here.
