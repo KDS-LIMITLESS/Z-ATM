@@ -1,4 +1,3 @@
-
 {% load static %}
 {% load crispy_forms_tags %}
 
@@ -23,12 +22,19 @@
 </head>
 <body style="max-width: 50%; margin-left:25%;">    
     <div class="content-section" style="max-width: 50%; margin: 20% 20% 20% 22%;">
+        {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+        {% endif %}
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                <a  href="{% url 'index' %}">Make another comment</a>
+            </small>
+        </div>
+    </div>    
 
-
-    <form method="post" style="margin-top: 1.3em;">
-              {{ comment_form | crispy }}
-              {% csrf_token %}
-              <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
-     </form>
-</body>
-</html>
+<body>
+<html>

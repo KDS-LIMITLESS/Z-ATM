@@ -29,5 +29,6 @@ urlpatterns = [
     path('password-reset-complete/', authV.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'), name='password_reset_complete'),
 
     path('', views.index, name="index"),
+    path('comment_sent/', views.comment_sent, name="comment_sent"),
     path('admin/', admin.site.urls),
 ]

@@ -25,6 +25,11 @@ def index(request):
         if comment_form.is_valid():
             comment_form.save()
             messages.success(request, "Yours comment has been sent. Check your email for replies.")
+            return redirect('/comment_sent/')
         return render(request, "index.html", {"commrnt_form": comment_form})
     comment_form = CommentForm()
     return render(request, "index.html", {"comment_form": comment_form})
+
+
+def comment_sent(request):
+    return render(request, "comment_sent.html")
