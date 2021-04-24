@@ -3,10 +3,11 @@ from django.contrib.auth.models import User
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(User, on_delete=models.CASCADE)
-    username = models.CharField(max_length=15)
-    email = models.EmailField(max_length=254)
-    body = models.TextField(null=False)
+    #post = models.ForeignKey('self', on_delete=models.CASCADE)
+    #id = models.BigAutoField(auto_created=True, primary_key=True)
+    username = models.CharField(max_length=15, default="username")
+    email = models.EmailField(default='Your-email')
+    body = models.TextField(default='Write your comments')
     date = models.DateTimeField(auto_now_add=True)
     active= models.BooleanField(default=False)
 

@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib import messages
-from .forms import RegisterForm
+from django.contrib.auth.decorators import login_required
+from .forms import RegisterForm, CommentForm
 
 
 def register_user(request) -> RegisterForm:   
@@ -17,5 +18,13 @@ def register_user(request) -> RegisterForm:
     return render(request, 'register.html', {"form": form})
 
 
+@login_required
 def index(request):
-    return render(request, "index.html")
+    if request.method == "POST":
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment_form.save()
+            messages.success(request, "Yours comment has been sent. Check your email for replies.")
+        return render(request, "index.html", {"commrnt_form": comment_form})
+    comment_form = CommentForm()
+    return render(request, "index.html", {"comment_form": comment_form})
