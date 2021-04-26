@@ -3,7 +3,6 @@ from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm, CommentForm
-from.models import Comment
 
 
 def register_user(request) -> RegisterForm:   

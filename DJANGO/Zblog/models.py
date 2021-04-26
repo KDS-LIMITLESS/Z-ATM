@@ -12,5 +12,5 @@ class Comment(models.Model):
         ordering = ['date']
 
     def __str__(self):
-        return f'Comment by {self.username}'
+        return f"Comment by {self.username} "
 
