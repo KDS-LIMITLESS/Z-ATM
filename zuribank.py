@@ -29,7 +29,10 @@ class ZuriAtm():
         
         self.db[self.accountNumber] = [self.username, password]
         # print(self.db)
-        print(f"Account created successfully! \n Your account number is {self.accountNumber}")
+        print(
+            "Account created successfully! \n",\
+                end=f'Your account number is {self.accountNumber} \n'
+        )
         return self.verify_user_login(ZuriAtm)
 
 
@@ -77,13 +80,17 @@ class ZuriAtm():
 
     
     def verify_user_login(self):
+        print()
         accountNumber = int(input("Enter your account number >>> "))
         password = int(input("Enter your password >>> "))
 
         print()
         userPSW = {u:p[1] for (u,p) in self.db.items()}
 
-        if not accountNumber in userPSW.keys() or password != userPSW[accountNumber]:
+        if (
+            not accountNumber in userPSW.keys()) or (
+                password != userPSW[accountNumber]):
+                
             print("Error: Invalid User Credidentials")
     
             print( 
