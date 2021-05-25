@@ -1,3 +1,5 @@
-**Welcome to ZURIBANK ATM**
+**ZURIBANK ATM**
 
-**An ATM Mockup Task from Zuri**
+**An ATM Mockup Task**
+
+Courtsey of [@theZuriTeam]('https://twitter.com/@theZuriTeam')
