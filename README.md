@@ -1,4 +1,4 @@
-#ZURIBANK ATM
+# ZURIBANK ATM
 
 **An ATM Mockup Task**
 
